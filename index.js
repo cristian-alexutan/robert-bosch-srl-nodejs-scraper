@@ -190,6 +190,9 @@ async function main() {
 
     if (solrReadyJobs.length > 0) {
       try {
+        console.log(`[${COMPANY_BRAND} Scraper] Deleting existing jobs for CIF ${COMPANY_CIF}...`);
+        await solr.deleteJobsByCIF(COMPANY_CIF);
+        console.log(`[${COMPANY_BRAND} Scraper] Old jobs deleted. Upserting ${solrReadyJobs.length} jobs...`);
         const result = await solr.upsertJobs(solrReadyJobs);
         console.log(`[${COMPANY_BRAND} Scraper] Upsert result:`, result);
       } catch (e) {
