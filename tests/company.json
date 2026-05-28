@@ -1,0 +1,24 @@
+{
+  "validatedAt": "2026-05-28T00:00:00.000Z",
+  "source": "ANAF",
+  "brand": "Robert Bosch",
+  "anaf": {
+    "cui": 5541546,
+    "name": "ROBERT BOSCH SRL",
+    "address": "MUNICIPIUL BUCURESTI, SECTORUL 1, STRADA ...",
+    "registrationNumber": "J1994007601405",
+    "caenCode": "2790",
+    "vatRegistered": true,
+    "inactive": false
+  },
+  "peviitor": null,
+  "summary": {
+    "company": "ROBERT BOSCH SRL",
+    "cif": "5541546",
+    "active": true,
+    "address": "MUNICIPIUL BUCURESTI, SECTORUL 1",
+    "registrationNumber": "J1994007601405",
+    "caenCode": "2790",
+    "vatRegistered": true
+  }
+}

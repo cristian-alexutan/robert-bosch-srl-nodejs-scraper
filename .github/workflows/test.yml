@@ -1,0 +1,59 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Dry run or delete'
+        required: true
+        default: '--dry-run'
+        type: choice
+        options:
+          - '--dry-run'
+          - '--delete'
+
+jobs:
+  validate-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: node tests/validate-bosch-jobs.js ${{ github.event.inputs.mode || '--dry-run' }}
+        env:
+          SOLR_AUTH: ${{ secrets.SOLR_AUTH }}
+
+  ensure-company-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: node company.js
+        env:
+          SOLR_AUTH: ${{ secrets.SOLR_AUTH }}
+
+  automation-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run test:unit
+      - run: npm run test:integration
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-report
+          path: test-report.html

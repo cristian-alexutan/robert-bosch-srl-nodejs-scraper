@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bosch Scraper - Docs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 40px; }
+        h1 { color: #1a73e8; margin-bottom: 10px; }
+        h2 { color: #0d47a1; margin: 25px 0 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .footer { margin-top: 40px; color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Robert Bosch SRL - Node.js Scraper</h1>
+    <p>Web scraper pentru a aduce locurile de munca de la Bosch in platforma peviitor.ro.</p>
+
+    <h2>Company Details</h2>
+    <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Brand</td><td>Robert Bosch</td></tr>
+        <tr><td>Legal Name</td><td>ROBERT BOSCH SRL</td></tr>
+        <tr><td>CUI/CIF</td><td>5541546</td></tr>
+        <tr><td>Registration</td><td>J1994007601405</td></tr>
+        <tr><td>Source</td><td>SmartRecruiters API</td></tr>
+    </table>
+
+    <h2>API Source</h2>
+    <p>Foloseste API-ul public SmartRecruiters:</p>
+    <code>GET https://api.smartrecruiters.com/v1/companies/BoschGroup/postings?country=ro&limit=50&offset=N</code>
+
+    <div class="footer">
+        <p>Generated for peviitor.ro | <a href="https://github.com/cristian-alexutan/robert-bosch-srl-nodejs-scraper">GitHub</a></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+node_modules/
+.env*
+dist/
+build/
+*.log
+jobs.json
+jobs_existing.json
+company_data.json
+delete.json
+*.pem
+*.key
+credentials.json
