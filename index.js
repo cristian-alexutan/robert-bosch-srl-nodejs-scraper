@@ -48,7 +48,13 @@ function parseApiJobs(apiData) {
       tags.push(job.function.label.toLowerCase().replace(/\s+/g, '-'));
     }
 
-    const url = `https://careers.smartrecruiters.com/BoschGroup/${uid}`;
+    const nameSlug = (job.name || '')
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+    const url = `https://jobs.smartrecruiters.com/BoschGroup/${uid}${nameSlug ? '-' + nameSlug : ''}`;
 
     jobs.push({
       url,
