@@ -4,7 +4,7 @@ const SOLR_URL = process.env.SOLR_URL || 'https://solr.peviitor.ro/solr/job';
 const SOLR_COMPANY_URL = process.env.SOLR_COMPANY_URL || 'https://solr.peviitor.ro/solr/company';
 const TIMEOUT = 10000;
 
-function getSolrAuth() {
+export function getSolrAuth() {
   const auth = process.env.SOLR_AUTH;
   if (!auth) return null;
   return 'Basic ' + Buffer.from(auth).toString('base64');

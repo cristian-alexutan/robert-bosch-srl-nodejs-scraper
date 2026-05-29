@@ -6,10 +6,10 @@
   "main": "index.js",
   "scripts": {
     "scrape": "node index.js",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "test:unit": "node --experimental-vm-modules node_modules/.bin/jest tests/unit",
-    "test:integration": "node --experimental-vm-modules node_modules/.bin/jest tests/integration",
-    "test:e2e": "node --experimental-vm-modules node_modules/.bin/jest tests/e2e"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
+    "test:unit": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js tests/unit",
+    "test:integration": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js tests/integration",
+    "test:e2e": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js tests/e2e"
   },
   "dependencies": {
     "node-fetch": "^3.3.2",

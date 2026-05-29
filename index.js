@@ -3,6 +3,7 @@ import * as company from './company.js';
 import * as solr from './solr.js';
 import * as anaf from './demoanaf.js';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { pathToFileURL } from 'url';
 
 const COMPANY_BRAND = 'Robert Bosch';
 const COMPANY_CIF = '5541546';
@@ -212,4 +213,6 @@ async function main() {
 
 export { parseApiJobs, mapToJobModel, transformJobsForSOLR };
 
-main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}

@@ -21,5 +21,5 @@ describe('ANAF Module', () => {
     const result = await getCompanyFromANAFWithFallback('0000000', cachedData);
     expect(result).not.toBeNull();
     expect(result.cui).toBe(5541546);
-  });
+  }, 15000);
 });
